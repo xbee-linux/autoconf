@@ -1,0 +1,26 @@
+schema-version: 1.0
+
+type: builder
+
+
+const:
+  srcDir: /usr/src
+  exportDir: /opt/autoconf
+
+dependency: m4
+
+provision:
+  - url:
+      from: https://ftp.gnu.org/gnu/autoconf/autoconf-{% version %}.tar.gz
+      todir: "{% srcDir %}"
+
+build:
+  - shell:
+      cmds:
+        - ./configure --prefix=/usr
+        - make
+#        - make check
+        - make install DESTDIR={% exportDir %}
+      directory: "{% srcDir %}/autoconf-{% version %}"
+  - export: "{% exportDir %}"
+
