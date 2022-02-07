@@ -15,7 +15,7 @@ description: |
 
 builder: ./autoconf-builder
 
-var:
+in:
   version: 2.71
 
 provision:
