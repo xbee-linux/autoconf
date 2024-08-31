@@ -18,10 +18,11 @@ description: |
 builder: m4
 
 var:
-  version: 2.71
+  xbee:
+    version: 2.71
 
 provision:
-  url: https://ftp.gnu.org/gnu/autoconf/autoconf-{{ .version }}.tar.gz
+  url: https://ftp.gnu.org/gnu/autoconf/autoconf-{{ .xbee.version }}.tar.gz
 
 build:
   - shell:
@@ -30,6 +31,6 @@ build:
         - make
 #        - make check
         - make install DESTDIR={{ .xbee.out }}
-      directory: "{{ .xbee.src }}/autoconf-{{ .version }}"
+      directory: "{{ .xbee.src }}/autoconf-{{ .xbee.version }}"
 
 
