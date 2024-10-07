@@ -1,7 +1,5 @@
 schema-version: 1.0
 
-type: builder
-
 description: |
   The Autoconf package contains programs for producing shell scripts that can automatically configure source code.
   Installed programs: autoconf, autoheader, autom4te, autoreconf, autoscan, autoupdate, and ifnames
